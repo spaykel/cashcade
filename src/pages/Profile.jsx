@@ -43,7 +43,12 @@ function Profile() {
         </div>
 
         <div className="profile-actions">
-          <button className="profile-button">Edit Profile</button>
+          <button
+            className="profile-button"
+            onClick={() => navigate('/edit-profile')}
+          >
+            Edit Profile
+          </button>
           <button
             className="profile-button secondary"
             onClick={() => navigate('/')}

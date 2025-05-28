@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import MapPage from './pages/Map';
 import Ask from './pages/Ask';
+import EditProfile from './pages/EditProfile';
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/ask" element={<Ask />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" />} />
