@@ -20,7 +20,7 @@ function VerifyStudent() {
 
     setTimeout(() => {
       navigate('/verified');
-    }, 2000);
+    }, 2500);
   };
 
   return (
