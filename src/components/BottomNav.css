@@ -1,0 +1,39 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 0.5rem 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  color: #888;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.nav-button.active {
+  color: #4EB89D;
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+}
+
+.nav-label {
+  margin-top: 0.25rem;
+}

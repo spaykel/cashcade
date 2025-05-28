@@ -1,0 +1,182 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.home-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.home-header {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.home-subtext {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.task-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.task-meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-price {
+  font-weight: 600;
+  color: #4EB89D;
+  font-size: 1rem;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 5.5rem;           /* raise it above the navbar */
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background-color: #4EB89D;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 200;             /* ensure it's above the nav */
+}
+
+.task-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.task-modal {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.modal-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.25rem;
+}
+
+.modal-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4EB89D;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: #4EB89D;
+}
+
+.signup-button {
+  margin-top: 0.75rem;
+  background-color: #4EB89D;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 320px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signup-button:hover {
+  background-color: #43a78c;
+}
+
+.signup-button:disabled {
+  background-color: #ccc;
+  color: #555;
+  cursor: default;
+}
