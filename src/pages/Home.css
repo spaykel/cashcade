@@ -180,3 +180,34 @@
   color: #555;
   cursor: default;
 }
+
+.home-search {
+  width: 100%;
+  max-width: 320px;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid #666666; 
+  background-color: #f5f5f5;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.no-tasks-text {
+  text-align: center;
+  color: #777;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.poster-link {
+  color: #4EB89D;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.poster-link:hover {
+  color: #3aa78a;
+}

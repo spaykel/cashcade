@@ -10,23 +10,30 @@ const mockTasks = [
   {
     id: 1,
     title: 'DJ for Club Event',
-    postedBy: 'Alex J.',
+    postedBy: 'Maya Doitch',
     price: '$75',
     time: 'Sat 9pm',
   },
   {
     id: 2,
     title: 'Need Graduation Photos',
-    postedBy: 'Sarah L.',
+    postedBy: 'Faith Park',
     price: '$40',
     time: 'This Sunday',
   },
   {
     id: 3,
     title: 'Help Move Dorm Stuff',
-    postedBy: 'Danny K.',
+    postedBy: 'Dani Tran',
     price: '$50',
     time: 'Tomorrow afternoon',
+  },
+  {
+    id: 4,
+    title: 'Need BUS 234 Tutor',
+    postedBy: 'Sammy Paykel',
+    price: '$50',
+    time: 'Friday morning',
   },
 ];
 
@@ -36,7 +43,14 @@ function Home() {
   const { toggleFavorite, isFavorited } = useFavorites();
   const { signUpForTask, signedUpTasks } = useSignedUpTasks();
 
+  const [searchQuery, setSearchQuery] = useState('');
+
   const isSignedUp = (taskId) => signedUpTasks.some(t => t.id === taskId);
+
+  const filteredTasks = mockTasks.filter(task =>
+    task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    task.postedBy.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <ScreenWrapper>
@@ -57,20 +71,30 @@ function Home() {
           </button>
         </div>
 
-        <p className="home-subtext">Find tasks other students need done</p>
+        <input
+          type="text"
+          className="home-search"
+          placeholder="Search tasks or users..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
 
         <div className="task-feed">
-          {mockTasks.map((task) => (
-            <div
-              key={task.id}
-              className="task-card"
-              onClick={() => setSelectedTask(task)}
-            >
-              <h2 className="task-title">{task.title}</h2>
-              <p className="task-meta">{task.postedBy} • {task.time}</p>
-              <p className="task-price">{task.price}</p>
-            </div>
-          ))}
+          {filteredTasks.length === 0 ? (
+            <p className="no-tasks-text">No tasks found.</p>
+          ) : (
+            filteredTasks.map((task) => (
+              <div
+                key={task.id}
+                className="task-card"
+                onClick={() => setSelectedTask(task)}
+              >
+                <h2 className="task-title">{task.title}</h2>
+                <p className="task-meta">{task.postedBy} • {task.time}</p>
+                <p className="task-price">{task.price}</p>
+              </div>
+            ))
+          )}
         </div>
 
         <button className="fab-button" onClick={() => navigate('/ask')}>＋</button>
@@ -82,7 +106,17 @@ function Home() {
                 ❌
               </button>
               <h2 className="modal-title">{selectedTask.title}</h2>
-              <p className="modal-meta">{selectedTask.postedBy} • {selectedTask.time}</p>
+              <p className="modal-meta">
+                <span
+                  className="poster-link"
+                  onClick={() => {
+                    // Example: navigate to a user profile route
+                    navigate(`/user/${encodeURIComponent(selectedTask.postedBy)}`);
+                  }}
+                >
+                  {selectedTask.postedBy}
+                </span> • {selectedTask.time}
+              </p>
               <p className="modal-description">
                 This is a placeholder for task details like location, a longer description,
                 and contact info. In a real version, this would show all posted details.
